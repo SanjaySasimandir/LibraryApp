@@ -4,7 +4,7 @@ const addBookRouter = express.Router();
 const multer = require('multer');
 const path = require('path');
 
-const BookData = require('../model/bookdata')
+const BookData = require('../model/bookdata');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -31,8 +31,7 @@ function router(nav) {
             else {
                 filePath += req.file.path;
                 
-                filePath = filePath.substring(6, filePath.length)
-                console.log(filePath)
+                filePath = filePath.substring(6, filePath.length);
                 var item = {
                     title: req.body.title,
                     author: req.body.author,
@@ -40,10 +39,10 @@ function router(nav) {
                     rating: req.body.rating,
                     img: filePath,
                     description: req.body.description,
-                }
+                };
                 var book = BookData(item);
                 book.save();
-                res.redirect('/books')
+                res.redirect('/books');
             }
         });
 

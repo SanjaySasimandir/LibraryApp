@@ -17,7 +17,7 @@ function router(nav) {
             username: req.body.username,
             email: req.body.email,
             password: req.body.password
-        }
+        };
         var user=RegistrationData(item);
         user.save();
         res.redirect('/login');

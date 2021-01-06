@@ -1,11 +1,12 @@
 const express = require("express");
 const addAuthorRouter = express.Router();
 
-const multer = require('multer');
+const multer = require('multer'); // For transferring files
 const path = require('path');
 
 const AuthorData = require('../model/authordata')
 
+// Configure filename format and storage location
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, './public/images/authors');
@@ -32,8 +33,7 @@ function router(nav) {
                 filePath += req.file.path;
             }
 
-            filePath = filePath.substring(6, filePath.length)
-            console.log(filePath);
+            filePath = filePath.substring(6, filePath.length);
             var item = {
                 name: req.body.name,
                 topic: req.body.topic,
@@ -41,7 +41,7 @@ function router(nav) {
                 img: filePath,
                 books: req.body.books.split('\n'),
                 life: req.body.life
-            }
+            };
             var author = AuthorData(item);
             author.save();
             res.redirect('/addauthor/success');

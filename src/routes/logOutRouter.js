@@ -29,7 +29,7 @@ function router(nav) {
         res.render('success',{
             message: `See you soon, ${firstname}!`,
             rediectPage:'/'
-        })
+        });
     });
 
     return logoutRouter;
