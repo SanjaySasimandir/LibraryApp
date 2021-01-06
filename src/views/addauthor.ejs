@@ -60,7 +60,7 @@
             <div class="col-12" style="padding: 1rem; background-color: #fffffe;">
                 <div class="row justify-content-center">
                     <div class="col-lg-9">
-                        
+
                         <h3 class="topic-name" style="text-align: center; padding: 1rem;">Add Author</h3>
 
                         <form method="POST" action="/addauthor/add" enctype="multipart/form-data">
@@ -98,16 +98,18 @@
                             </div>
                             <label for="tag" style="padding-left: 0.5rem;">Books:</label>
                             <div class="form-group">
-                                
+
                                 <textarea class="form-control roundBorder" name="books" id="" cols="30" rows="5"
-                                    style="width: 100%;" placeholder="Enter books written by the author" required></textarea>
+                                    style="width: 100%;" placeholder="Enter books written by the author"
+                                    required></textarea>
 
                             </div>
                             <label for="tag" style="padding-left: 0.5rem;">Description:</label>
                             <div class="form-group">
-                                
+
                                 <textarea class="form-control roundBorder" name="life" id="" cols="30" rows="5"
-                                    style="width: 100%;" placeholder="Enter description of the author"  required></textarea>
+                                    style="width: 100%;" placeholder="Enter description of the author"
+                                    required></textarea>
 
                             </div>
 
@@ -120,7 +122,10 @@
                 </div>
             </div>
         </div>
-
+        <footer style="text-align: center; color: #fffffe; padding: 1rem;">
+            <h5 style="font-family: 'Poppins', sans-serif; font-weight: 200; font-size: medium; padding-left: 1rem;"><b
+                    style="font-weight: 400;">Library</b>App © 2021</h5>
+        </footer>
         <script>
             function img_pathUrl(input) {
                 $('#preview')[0].src = (window.URL ? URL : webkitURL).createObjectURL(input.files[0]);

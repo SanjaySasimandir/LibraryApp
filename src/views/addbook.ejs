@@ -37,16 +37,16 @@
                 <%for(let i=0;i<nav.length;i++){%>
                     <li class="nav-item">
                         <%if(nav[i].name=='Add Book'){%>
-        
+
                             <a class="nav-link active" href="<%=nav[i].link%>">
                                 <%=nav[i].name%>
                             </a>
-                        <%}%>
-                        <%if(nav[i].name!='Add Book'){%>
-                            <a class="nav-link" href="<%=nav[i].link%>">
-                                <%=nav[i].name%>
-                            </a>
-                        <%}%>
+                            <%}%>
+                                <%if(nav[i].name!='Add Book'){%>
+                                    <a class="nav-link" href="<%=nav[i].link%>">
+                                        <%=nav[i].name%>
+                                    </a>
+                                    <%}%>
                     </li>
                     <%}%>
             </ul>
@@ -81,13 +81,13 @@
                                 <div class="col-md-6" style="padding-top: 1rem;">
                                     <label for="tag" style="padding-left: 0.5rem;">Title:</label>
                                     <input class="form-control roundBorder" type="text"
-                                placeholder="Enter title of the book" name="title" required>
+                                        placeholder="Enter title of the book" name="title" required>
                                 </div>
                                 <div class="col-md-6" style="padding-top: 1rem;">
                                     <label for="tag" style="padding-left: 0.5rem;">Rating (out of 5):</label>
                                     <input class="form-control roundBorder" type="number"
-                                placeholder="Enter rating of the book" name="rating" min="0" max="5" required>
-                                
+                                        placeholder="Enter rating of the book" name="rating" min="0" max="5" required>
+
                                 </div>
                             </div>
 
@@ -95,7 +95,7 @@
                                 <div class="col-md-6" style="padding-top: 1rem;">
                                     <label for="tag" style="padding-left: 0.5rem;">Genre:</label>
                                     <input class="form-control roundBorder" type="text"
-                                placeholder="Enter genre of the book" name="genre" required>
+                                        placeholder="Enter genre of the book" name="genre" required>
                                 </div>
                                 <div class="col-md-6 row justify-content-center" style="padding-top: 1rem;">
                                     <label for="tag" style="padding-left: 0.5rem;">Image:</label><br>
@@ -111,16 +111,17 @@
                             </div>
                             <label for="tag" style="padding-left: 0.5rem;">Author:</label>
                             <div class="form-group">
-                                
+
                                 <input class="form-control roundBorder" type="text"
-                                placeholder="Enter name of the author" name="author" required>
+                                    placeholder="Enter name of the author" name="author" required>
 
                             </div>
                             <label for="tag" style="padding-left: 0.5rem;">Description:</label>
                             <div class="form-group">
-                                
+
                                 <textarea class="form-control roundBorder" name="description" id="" cols="30" rows="5"
-                                    style="width: 100%;" placeholder="Enter description of the book"  required></textarea>
+                                    style="width: 100%;" placeholder="Enter description of the book"
+                                    required></textarea>
 
                             </div>
 
@@ -131,7 +132,10 @@
                 </div>
             </div>
         </div>
-
+        <footer style="text-align: center; color: #fffffe; padding: 1rem;">
+            <h5 style="font-family: 'Poppins', sans-serif; font-weight: 200; font-size: medium; padding-left: 1rem;"><b
+                    style="font-weight: 400;">Library</b>App © 2021</h5>
+        </footer>
 
 </body>
 

@@ -35,16 +35,16 @@
                 <%for(let i=0;i<nav.length;i++){%>
                     <li class="nav-item">
                         <%if(nav[i].name=='Authors'){%>
-        
+
                             <a class="nav-link active" href="<%=nav[i].link%>">
                                 <%=nav[i].name%>
                             </a>
-                        <%}%>
-                        <%if(nav[i].name!='Authors'){%>
-                            <a class="nav-link" href="<%=nav[i].link%>">
-                                <%=nav[i].name%>
-                            </a>
-                        <%}%>
+                            <%}%>
+                                <%if(nav[i].name!='Authors'){%>
+                                    <a class="nav-link" href="<%=nav[i].link%>">
+                                        <%=nav[i].name%>
+                                    </a>
+                                    <%}%>
                     </li>
                     <%}%>
             </ul>
@@ -60,8 +60,9 @@
 
                     <div class="row align-items-center">
                         <div class="col-md-2 col-sm-3 row justify-content-center">
-                            <a href="/authors/<%=authors[i]._id%>" style="text-align: center;"><img alt="" src="<%=authors[i].img%>"
-                                    style="width: 100px; height: 100px;" class="img-circle"></a>
+                            <a href="/authors/<%=authors[i]._id%>" style="text-align: center;"><img alt=""
+                                    src="<%=authors[i].img%>" style="width: 100px; height: 100px;"
+                                    class="img-circle"></a>
                         </div>
                         <div class="col-md-10 col-sm-9 align-items-center" style="padding-left: 2rem;">
                             <div class="col-xs-9">
@@ -83,7 +84,10 @@
             </div>
         </div>
     </div>
-
+    <footer style="text-align: center; color: #fffffe; padding: 1rem;">
+        <h5 style="font-family: 'Poppins', sans-serif; font-weight: 200; font-size: medium; padding-left: 1rem;"><b
+                style="font-weight: 400;">Library</b>App © 2021</h5>
+    </footer>
 
 </body>
 
