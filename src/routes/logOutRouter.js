@@ -15,14 +15,21 @@ function router(nav) {
         fs.writeFile('data/data.json', data, (err) => {
             if (err) throw err;
             else {
-                res.redirect('/logout/loggedout');
+                res.redirect('/logout/logoutsuccess');
             }
         });
     });
 
 
-    logoutRouter.get("/loggedout", function (req, res) {
-        res.redirect('/books')
+    logoutRouter.get("/logoutsuccess", function (req, res) {
+        let rawdata = fs.readFileSync('data/data.json');
+        let data = JSON.parse(rawdata);
+        let firstname = data.name;
+
+        res.render('success',{
+            message: `See you soon, ${firstname}!`,
+            rediectPage:'/'
+        })
     });
 
     return logoutRouter;

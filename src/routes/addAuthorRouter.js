@@ -44,10 +44,10 @@ function router(nav) {
             }
             var author = AuthorData(item);
             author.save();
+            res.redirect('/addauthor/success');
         });
 
 
-        res.redirect('/addauthor/success');
 
     });
 

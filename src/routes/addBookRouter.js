@@ -43,9 +43,7 @@ function router(nav) {
                 }
                 var book = BookData(item);
                 book.save();
-                setTimeout(function(){
-                    res.redirect('/books')
-                },2000);
+                res.redirect('/books')
             }
         });
 

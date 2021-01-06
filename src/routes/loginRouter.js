@@ -27,15 +27,16 @@ function router(nav) {
             emaildetails = user;
 
             if (usernamedetails.length != 0 || emaildetails.length != 0) {
+                let firstname = usernamedetails.concat(emaildetails)[0].firstName;
                 let rawdata = fs.readFileSync('data/data.json');
                 let data = JSON.parse(rawdata);
-
+                data.name = firstname;
                 data.logged_in = true;
                 data = JSON.stringify(data, null, 2);
                 fs.writeFile('data/data.json', data, (err) => {
                     if (err) throw err;
                     else {
-                        res.redirect('/login/loggedin');
+                        res.redirect('/login/loginsuccess');
                     }
                 });
             }
@@ -46,13 +47,16 @@ function router(nav) {
 
 
     });
-    
-    loginRouter.get("/loggedin", function (req, res) {
-        res.redirect('/login/booksredirect')
+
+    loginRouter.get('/loginsuccess', function (req, res) {
+        let rawdata = fs.readFileSync('data/data.json');
+        let data = JSON.parse(rawdata);
+        let firstname = data.name;
+        res.render('success', {
+            message: `Welcome Back, ${firstname}!`,
+            rediectPage: '/'
+        });
     });
-    loginRouter.get('/booksredirect',function(req,res){
-        res.redirect('/books')
-    })
 
     return loginRouter;
 };
