@@ -89,6 +89,17 @@ app.use('/addbook', addBookRouter);
 var addAuthorRouter = require('./src/routes/addAuthorRouter')(nav);
 app.use('/addauthor', addAuthorRouter);
 
+/*app.get('*',function(res,req){
+  res.render('pagenotfound',{
+    nav
+  })
+});*/
+app.use(function (req,res,next){
+	res.render('pagenotfound',{
+    nav
+  });
+});
+
 app.listen(8080, function () {
     console.log("Listening at 8080");
 });
